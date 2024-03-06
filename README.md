@@ -13,5 +13,5 @@ git push -u origin <your-name> <br />
 to add files to this branch in the future, run the following command: <br />
 git add . <br />
 git commit -m "message-you-wanna-leave" <br />
-git push <br />
+git push
 
