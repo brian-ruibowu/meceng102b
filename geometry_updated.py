@@ -4,8 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Load the image
-lst = ["angle.jpg", "circle.jpg", "decagon.png", "parallelogram.png", "pentagon.jpeg", "rectangle.png", "triangle.jpg"]
-rawImg = "images/" + lst[1]
+rawImg = "images/circle.jpg"
 image = cv2.imread(rawImg, cv2.IMREAD_GRAYSCALE)
 
 # Apply adaptive thresholding
@@ -120,3 +119,5 @@ plt.savefig(analyzed_image_name)
 
 # If you want to also show the plot uncomment the next line
 plt.show()
+
+

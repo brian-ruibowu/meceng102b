@@ -5,7 +5,7 @@ from PIL import Image
 import cv2
 import numpy as np
 
-rawImg = "geometry.jpg"
+rawImg = "images/circle.jpg"
 # panda = imread(rawImg)
 # print(panda.size, panda.shape, panda.ndim)
 

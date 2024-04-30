@@ -1,0 +1,30 @@
+A = pi/2;
+L = 0.3;
+w = 8*2*pi/60;
+N = 0.8; 
+n = 9;
+Im = 0; 
+M = 9.07; 
+g = 9.81; 
+
+m = -0.0625; % Km^2
+t = 0:0.01:10;
+
+torque = 1/n/N*(-1*(Im+M*L^2)*A/2*cos(w*t)*w^2 + M*g*L*sin(A/2*(1-cos(w*t))));
+speed = A/2*sin(w*t)*w*n;
+
+slope = diff(torque)./diff(speed);
+[~, minIndex] = min(abs(slope - m));
+targetSpeed = speed(minIndex);
+targetTorque = torque(minIndex);
+constant = targetTorque - m * targetSpeed;
+speed_range = linspace(min(speed), max(speed), 1000);
+winding_line_values = m * speed_range + constant;
+
+figure;
+plot(speed, torque, 'b-', 'LineWidth', 2);
+hold on;
+plot(speed_range, winding_line_values, 'r--', 'LineWidth', 2);
+grid on;
+xlim([0, 8]);
+ylim([0, 5]);
